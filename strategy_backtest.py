@@ -2,15 +2,36 @@
 # strategy_backtest.py
 
 import asyncio
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from datetime import datetime, timedelta
 import os
+from datetime import datetime, timedelta
 
+# Try importing optional dependencies with graceful fallbacks
+try:
+    import pandas as pd
+    import numpy as np
+    HAS_NUMPY_PANDAS = True
+except ImportError:
+    print("Warning: NumPy or pandas not available. Using simplified data structures.")
+    HAS_NUMPY_PANDAS = False
+
+try:
+    import matplotlib.pyplot as plt
+    HAS_MATPLOTLIB = True
+except ImportError:
+    print("Warning: Matplotlib not available. Visualization will be limited.")
+    HAS_MATPLOTLIB = False
+
+# Import project modules
 from trading_strategy.strategies.mean_reversion import MeanReversionStrategy
 from trading_strategy.strategies.momentum import MomentumStrategy
-from analysis.visualization import TradingVisualizer
+
+# Try importing visualization module - may depend on matplotlib/plotly
+try:
+    from analysis.visualization import TradingVisualizer
+    HAS_VISUALIZATION = True
+except ImportError:
+    print("Warning: Visualization module not available. Reporting will be text-based only.")
+    HAS_VISUALIZATION = False
 
 class StrategyBacktester:
     """

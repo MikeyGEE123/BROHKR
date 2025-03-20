@@ -46,3 +46,7 @@ htmlcov/
 # Build artifacts
 brokr-page-plexus/node_modules/
 brokr-page-plexus-1/node_modules/
+
+# Ignore entire git repositories
+brokr-page-plexus/
+brokr-page-plexus-1/
