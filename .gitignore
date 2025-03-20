@@ -1,0 +1,48 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+brokr_env/
+.env
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs
+*.log
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.swp
+.DS_Store
+
+# Database
+*.sqlite
+*.db
+
+# Binary files and artifacts from build processes
+*.so
+*.dylib
+*.dll
+*.exe
+
+# Project specific
+.qodo
+.qodo/
+
+# Build artifacts
+brokr-page-plexus/node_modules/
+brokr-page-plexus-1/node_modules/

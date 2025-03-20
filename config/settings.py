@@ -6,7 +6,7 @@ import logging
 
 # Define default configuration values
 DEFAULT_CONFIG = {
-    "api_base_url": "https://api.example.com",  # Default exchange API URL
+    "api_base_url": "https://api.binance.com/api/v3",  # Binance API URL
     "log_level": "INFO",                        # Default logging level
     "exchanges": ["binance", "kraken"],         # List of exchanges to monitor
     "trading_parameters": {

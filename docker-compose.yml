@@ -5,7 +5,7 @@ services:
     ports:
       - "8000:8000"  # Adjust as needed
     environment:
-      - API_BASE_URL=https://api.example.com
+      - API_BASE_URL=https://api.binance.com
       - LOG_LEVEL=DEBUG
     volumes:
       - .:/app  # Optional, for live updates during development

@@ -31,7 +31,7 @@ class DataManager:
         tasks = []
         for connector in self.connectors:
             # For demonstration, we assume the same endpoint for all connectors.
-            task = asyncio.create_task(self.fetch_and_parse_data(connector, endpoint="/api/v1/ticker"))
+            task = asyncio.create_task(self.fetch_and_parse_data(connector, endpoint="/api/v3/ticker/24hr"))
             tasks.append(task)
 
         results = await asyncio.gather(*tasks, return_exceptions=True)

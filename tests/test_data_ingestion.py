@@ -1,7 +1,6 @@
 # tests/test_data_ingestion.py
 
 import pytest
-import asyncio
 from data_ingestion import data_parser, data_manager
 
 def test_parse_market_data_success():

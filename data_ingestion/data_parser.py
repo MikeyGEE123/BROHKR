@@ -21,11 +21,10 @@ def parse_market_data(raw_data: dict) -> dict:
         Exception: If the expected data fields are not present or conversion fails.
     """
     try:
-        # Example normalization logic.
-        ticker_data = raw_data.get("ticker", {})
+        ticker = raw_data.get("ticker", {})
         normalized_data = {
-            "symbol": ticker_data.get("symbol", "UNKNOWN"),
-            "price": float(ticker_data.get("price", 0.0)),
+            "symbol": ticker.get("symbol", "UNKNOWN"),
+            "price": float(ticker.get("price", 0.0)),
             "timestamp": raw_data.get("timestamp")
         }
         return normalized_data

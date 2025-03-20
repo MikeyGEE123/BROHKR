@@ -1,7 +1,6 @@
 # tests/test_order_manager.py
 
 import pytest
-import asyncio
 from trading_execution.order_manager import OrderManager
 from trading_execution.exchange_interface import ExchangeInterface
 

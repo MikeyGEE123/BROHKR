@@ -31,7 +31,7 @@ class MomentumStrategy(BaseStrategy):
         current_price = data.get("current_price")
 
         # If there is insufficient data, we cannot generate a signal.
-        if not historical_prices or current_price is None:
+        if not historical_prices or current_price is None or len(historical_prices) < self.lookback_period:
             return "hold"
 
         # Calculate average from the last 'lookback_period' values.
@@ -39,9 +39,9 @@ class MomentumStrategy(BaseStrategy):
         average_price = sum(recent_prices) / len(recent_prices)
 
         # Determine signal based on a 1% deviation from the average.
-        if current_price > average_price * 1.01:
-            return "buy"
-        elif current_price < average_price * 0.99:
+        if current_price < average_price * 0.99:
             return "sell"
+        elif current_price > average_price * 1.01:
+            return "buy"
         else:
             return "hold"

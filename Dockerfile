@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.13-slim
+FROM python:3.11-slim
 
 # Environment variables to prevent Python from writing .pyc files and buffering stdout/stderr.
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -13,7 +13,7 @@ COPY requirements.txt .
 
 # Install necessary Python packages
 RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
+    if [ -f requirements.txt ]; then pip install -r requirements.txt; else echo "requirements.txt not found"; fi
 
 # Copy the rest of the application code into the container
 COPY . .
