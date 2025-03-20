@@ -1,0 +1,57 @@
+{
+  "timestamp": "2025-03-19T19:48:16.053342",
+  "strategy": "MeanReversionStrategy",
+  "parameters": {
+    "threshold": 0.03,
+    "window_size": 5
+  },
+  "prices": [
+    50000,
+    50500,
+    51000,
+    52000,
+    51500,
+    51200,
+    50800,
+    50400,
+    50600,
+    51200,
+    52000,
+    53000,
+    52500,
+    52200,
+    51800,
+    51400,
+    51800,
+    52200,
+    53000,
+    52500
+  ],
+  "signals": [
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "sell",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold"
+  ],
+  "summary": {
+    "buy_count": 0,
+    "sell_count": 1,
+    "hold_count": 19
+  }
+}
