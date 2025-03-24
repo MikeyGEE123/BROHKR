@@ -3,3 +3,4 @@ __pycache__/
 .env
 brokr_env/
 node_modules/
+.qodo

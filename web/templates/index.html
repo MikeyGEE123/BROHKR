@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BROHKR Market Visualizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>BROHKR Market Visualizer</h1>
+    </header>
+    
+    <div class="container">
+        <div class="controls">
+            <div class="form-group">
+                <label for="exchange">Exchange:</label>
+                <select id="exchange"></select>
+            </div>
+            <div class="form-group">
+                <label for="symbol">Symbol:</label>
+                <input type="text" id="symbol" value="BTCUSDT">
+            </div>
+            <div class="form-group">
+                <label for="timeframe">Timeframe:</label>
+                <select id="timeframe">
+                    <option value="1m">1m</option>
+                    <option value="5m">5m</option>
+                    <option value="15m">15m</option>
+                    <option value="30m">30m</option>
+                    <option value="1h" selected>1h</option>
+                    <option value="4h">4h</option>
+                    <option value="1d">1d</option>
+                    <option value="1w">1w</option>
+                </select>
+            </div>
+            <button id="refresh-btn">Refresh Data</button>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="price-chart">Price Chart</button>
+            <button class="tab-btn" data-tab="order-book">Order Book</button>
+            <button class="tab-btn" data-tab="exchange-comparison">Exchange Comparison</button>
+        </div>
+        
+        <div class="tab-content">
+            <div id="price-chart" class="tab-pane active">
+                <div id="price-chart-container" class="chart-container"></div>
+            </div>
+            <div id="order-book" class="tab-pane">
+                <div id="order-book-container" class="chart-container"></div>
+            </div>
+            <div id="exchange-comparison" class="tab-pane">
+                <div id="exchange-comparison-container" class="chart-container"></div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>BROHKR Trading Platform &copy; 2023</p>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

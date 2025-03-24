@@ -1,0 +1,32 @@
+# Cloudflare Pages configuration for BROHKR Trading Platform
+
+name = "brohkr-trading-platform"
+type = "webpack"
+account_id = "fe39f359aabbbb52d678be7ccf76839b"
+
+# Configure build settings
+[build]
+  command = "pip install -r requirements.txt && python -m flask run --port 8080"
+  upload.format = "service-worker"
+
+# Configure routes
+[routes]
+  pattern = "*/*"
+  script = "index.js"
+
+# Configure environment variables
+[env.production]
+  FLASK_ENV = "production"
+
+[env.staging]
+  FLASK_ENV = "development"
+
+# Configure custom domains
+[site]
+  bucket = "./web"
+  entry-point = "web/server.py"
+  custom_domain = "app.dontbebrokr.com"
+
+# Configure build output directory
+[site.static]
+  dir = "web/static"
